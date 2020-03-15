@@ -1,0 +1,45 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <div class="header-content">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <a routerLink="." class="logo">
+        <h1>Avon</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/SketchUp-Logo.png"/>
+      </a>
+    </div>
+    <button class="login" mat-raised-button matTooltip="Autenticar"><mat-icon>input</mat-icon></button>
+    <button class="exit" mat-raised-button matTooltip="Salir"><mat-icon>exit_to_app</mat-icon></button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+        <a mat-list-item class="option-tab" routerLink="."><span>Catalogo</span><i class="material-icons">import_contacts</i></a>
+        <a mat-list-item class="option-tab" routerLink="."><span>Pedidos</span><i class="material-icons">enhanced_encryption</i></a>
+        <a mat-list-item class="option-tab" routerLink="."><span>Clientes</span><i class="material-icons">group</i></a>
+        <a mat-list-item class="option-tab" routerLink="."><span>Pagos</span><i class="material-icons">attach_money</i></a>
+        <a mat-list-item class="option-tab" routerLink="."><span>Busqueda</span><i class="material-icons">search</i></a>
+
+        <a mat-list-item routerLink="."><span>Perfil</span><i class="material-icons">person</i></a>
+        <a mat-list-item routerLink="."><span>Configuración</span><i class="material-icons">settings</i></a>
+        <a mat-list-item routerLink="."><span>Acerca de</span><i class="material-icons">bookmark</i></a>
+        <a mat-list-item routerLink="."><span>Salir</span><i class="material-icons">exit_to_app</i></a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="menu-down">
+        <div class="content"></div>
+        <div class="tabs">
+          <a class="item-tab focus-tab"  matTooltip="Catalogo" routerLink="."><i class="material-icons">import_contacts</i></a>
+          <a class="item-tab"  matTooltip="Pedidos" routerLink="."><i class="material-icons">enhanced_encryption</i></a>
+          <a class="item-tab"  matTooltip="Clientes" routerLink="."><i class="material-icons">group</i></a>
+          <a class="item-tab"  matTooltip="Pagos" routerLink="."><i class="material-icons">attach_money</i></a>
+          <a class="item-tab"  matTooltip="Busqueda" routerLink="."><i class="material-icons">search</i></a>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
